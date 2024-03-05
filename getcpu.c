@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
         char* str = argv[1];
         for (int i = 0; str[i] != 0; i++){
             if (str[i] > '9' || str[i] < '0'){
-                printf("Usage: getcpu t\nWhere t is time in milliseconds to wait before updating cpu usage (recommended 900)\nYou can also pass r as an argument to round the returned value.\nExample: getcpu 900 r\n");
+                printf("Usage: getcpu <time_in_milliseconds> [r]\n<time_in_milliseconds>: This is how often (in milliseconds) you want the script to check CPU usage. The minimum is 200ms, but 900ms (0.9 seconds) is recommended.\n[r]: This is optional. If you add it, the reported CPU usage will be rounded to the nearest whole number instead of showing decimals.");
                 return 1;
             }
         }
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
         }
     }
     else {
-        printf("Usage: getcpu t\nWhere t is time in milliseconds to wait before updating cpu usage (recommended 900)\nYou can also pass r as an argument to round the returned value.\nExample: getcpu 900 r\n");
+        printf("Usage: getcpu <time_in_milliseconds> [r]\n<time_in_milliseconds>: This is how often (in milliseconds) you want the script to check CPU usage. The minimum is 200ms, but 900ms (0.9 seconds) is recommended.\n[r]: This is optional. If you add it, the reported CPU usage will be rounded to the nearest whole number instead of showing decimals.");
         return 1;
     }
     while (1){
