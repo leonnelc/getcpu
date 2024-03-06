@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     } else{
         printf("%.2Lf\n", perc);
     }
-
+    fflush(stdout);
     free(before);
     free(after);
     }
